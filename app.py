@@ -8,15 +8,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize Groq client
-api_key = os.getenv("GROQ_API_KEY")
-if not api_key:
-    st.error("GROQ_API_KEY not found in .env file. Please add it to proceed.")
-    st.stop()
+GROQ_API_KEY="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"
 
-client = Groq(api_key=api_key)
+client = Groq(api_key=GROQ_API_KEY)
 
 # Set page configuration
-st.set_page_config(page_title="PeakSolution-GPT", page_icon="🤖", layout="centered")
+st.set_page_config(page_title="Muhammad_Ali-GPT", page_icon="🤖", layout="centered")
 
 # Custom CSS for premium look and typing animation
 st.markdown("""
@@ -57,7 +54,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("PeakSolution-GPT")
+st.title("Muhammad_Ali-GPT")
 
 # Sidebar for model selection
 with st.sidebar:
