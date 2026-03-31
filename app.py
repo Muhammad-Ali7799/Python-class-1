@@ -127,7 +127,6 @@ if prompt := st.chat_input("Ask me anything..."):
             
         except Exception as e:
             st.error(f"Error generating response: {e}")
-#pip install gtts playsound
 from gtts import gTTS
 import tempfile
 import os
