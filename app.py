@@ -127,26 +127,3 @@ if prompt := st.chat_input("Ask me anything..."):
             
         except Exception as e:
             st.error(f"Error generating response: {e}")
-from gtts import gTTS
-import tempfile
-import os
-def speak_text(text):
-    tts = gTTS(text=text, lang='en')
-    
-    # Create temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
-        temp_path = fp.name
-        tts.save(temp_path)
-
-    # Play audio in Streamlit
-    audio_file = open(temp_path, 'rb')
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes, format='audio/mp3')
-
-    # Optional: delete file after use
-    os.remove(temp_path)
-    message_placeholder.markdown(full_response)
-    # Convert response to speech
-speak_text(full_response)
-
-
